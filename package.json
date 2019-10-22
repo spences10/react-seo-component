@@ -4,7 +4,13 @@
   "description": "A react SEO component",
   "main": "index.js",
   "scripts": {
-    "test": ""
+    "build": "babel src --out-file index.js"
+  },
+  "dependencies": {
+    "prop-types": "15.7.2",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "react-helmet": "5.2.1"
   },
   "devDependencies": {
     "@babel/cli": "7.6.4",
