@@ -9,36 +9,25 @@ export const SEO = ({
   article,
   image,
 }) => {
-  const imagePath = `${siteUrl}${
-    image.publicURL ? 'undefined' : defaultImage
-  }`
-
-  const seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: `${siteUrl}${pathname || '/'}`,
-    image: `${imagePath || defaultImage}`,
-  }
-
   return (
     <>
-      <Helmet title={seo.title}>
+      <Helmet title={title}>
         <html lang={siteLanguage} />
-        <link rel="canonical" href={seo.url} />
-        <meta name="description" content={seo.description} />
+        <link rel="canonical" href={pathname} />
+        <meta name="description" content={description} />
       </Helmet>
       <Facebook
-        desc={seo.description}
-        image={seo.image}
-        title={seo.title}
+        desc={description}
+        image={image}
+        title={title}
         type={article ? 'article' : 'website'}
-        url={seo.url}
+        url={pathname}
         locale={siteLocale}
       />
       <Twitter
-        title={seo.title}
-        image={seo.image}
-        desc={seo.description}
+        title={title}
+        image={image}
+        desc={description}
         username={twitterUsername}
       />
     </>
