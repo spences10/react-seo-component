@@ -1,0 +1,23 @@
+{
+  "name": "react-seo-component",
+  "version": "0.1.0",
+  "description": "A react SEO component",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/react-seo-component.git"
+  },
+  "keywords": [
+    "react",
+    "seo"
+  ],
+  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spences10/react-seo-component/issues"
+  },
+  "homepage": "https://github.com/spences10/react-seo-component#readme"
+}
