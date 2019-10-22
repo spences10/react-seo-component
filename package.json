@@ -6,6 +6,12 @@
   "scripts": {
     "test": ""
   },
+  "devDependencies": {
+    "@babel/cli": "7.6.4",
+    "@babel/core": "7.6.4",
+    "@babel/preset-env": "7.6.3",
+    "@babel/preset-react": "7.6.3"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spences10/react-seo-component.git"
@@ -14,7 +20,7 @@
     "react",
     "seo"
   ],
-  "author": "Scott Spence <spences10apps@gmail.com> (https://scottspence.me/)",
+  "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/react-seo-component/issues"
