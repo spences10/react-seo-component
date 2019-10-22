@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
-import { useSiteMetadata } from '../../hooks/useSiteMetadata'
 import { Facebook } from './facebook'
 import { Twitter } from './twitter'
 
@@ -12,16 +11,6 @@ export const SEO = ({
   article,
   image,
 }) => {
-  const {
-    title: defaultTitle,
-    description: defaultDescription,
-    siteUrl,
-    siteLanguage,
-    siteLocale,
-    twitterUsername,
-    imageLink: defaultImage,
-  } = useSiteMetadata()
-
   const imagePath = `${siteUrl}${
     image.publicURL ? 'undefined' : defaultImage
   }`
