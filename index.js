@@ -18,35 +18,31 @@ var SEO = function SEO(_ref) {
       description = _ref.description,
       pathname = _ref.pathname,
       article = _ref.article,
-      image = _ref.image;
-  var imagePath = "".concat(siteUrl).concat(image.publicURL ? 'undefined' : defaultImage);
-  var seo = {
-    title: title || defaultTitle,
-    description: description || defaultDescription,
-    url: "".concat(siteUrl).concat(pathname || '/'),
-    image: "".concat(imagePath || defaultImage)
-  };
+      image = _ref.image,
+      siteLanguage = _ref.siteLanguage,
+      siteLocale = _ref.siteLocale,
+      twitterUsername = _ref.twitterUsername;
   return _react["default"].createElement(_react["default"].Fragment, null, _react["default"].createElement(_reactHelmet["default"], {
-    title: seo.title
+    title: title
   }, _react["default"].createElement("html", {
-    lang: siteLanguage
+    lang: siteLanguage ? siteLanguage : 'en'
   }), _react["default"].createElement("link", {
     rel: "canonical",
-    href: seo.url
+    href: pathname
   }), _react["default"].createElement("meta", {
     name: "description",
-    content: seo.description
+    content: description
   })), _react["default"].createElement(Facebook, {
-    desc: seo.description,
-    image: seo.image,
-    title: seo.title,
+    desc: description,
+    image: image,
+    title: title,
     type: article ? 'article' : 'website',
-    url: seo.url,
-    locale: siteLocale
+    url: pathname,
+    locale: siteLocale ? siteLocale : 'en_gb'
   }), _react["default"].createElement(Twitter, {
-    title: seo.title,
-    image: seo.image,
-    desc: seo.description,
+    title: title,
+    image: image,
+    desc: description,
     username: twitterUsername
   }));
 };

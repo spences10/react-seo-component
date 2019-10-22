@@ -8,11 +8,14 @@ export const SEO = ({
   pathname,
   article,
   image,
+  siteLanguage,
+  siteLocale,
+  twitterUsername,
 }) => {
   return (
     <>
       <Helmet title={title}>
-        <html lang={siteLanguage} />
+        <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={description} />
       </Helmet>
@@ -22,7 +25,7 @@ export const SEO = ({
         title={title}
         type={article ? 'article' : 'website'}
         url={pathname}
-        locale={siteLocale}
+        locale={siteLocale ? siteLocale : 'en_gb'}
       />
       <Twitter
         title={title}
