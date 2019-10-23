@@ -5,6 +5,7 @@ export default {
   output: {
     file: './index.js',
     format: 'cjs',
+    exports: 'named',
   },
   plugins: [
     babel({
