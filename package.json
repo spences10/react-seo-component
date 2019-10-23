@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "release": "npm version patch && npm publish && git push --tags"
+    "release": "yarn build && npm version patch && npm publish && git push --tags"
   },
   "dependencies": {
     "prop-types": "15.7.2",
