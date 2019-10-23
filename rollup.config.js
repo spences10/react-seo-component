@@ -6,6 +6,7 @@ export default {
     file: './index.js',
     format: 'cjs',
     exports: 'named',
+    external: ['prop-types', 'react', 'react-helmet'],
   },
   plugins: [
     babel({
