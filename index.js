@@ -98,7 +98,113 @@ var SEO = function SEO(_ref) {
       image = _ref.image,
       siteLanguage = _ref.siteLanguage,
       siteLocale = _ref.siteLocale,
-      twitterUsername = _ref.twitterUsername;
+      twitterUsername = _ref.twitterUsername,
+      author = _ref.author,
+      datePublished = _ref.datePublished,
+      dateModified = _ref.dateModified;
+  // schema.org in JSONLD format
+  // https://developers.google.com/search/docs/guides/intro-structured-data
+  // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+  var schemaOrgWebPage = {
+    '@context': 'http://schema.org',
+    '@type': 'WebPage',
+    url: pathname,
+    headline: description,
+    inLanguage: siteLanguage,
+    mainEntityOfPage: pathname,
+    description: description,
+    name: title,
+    author: {
+      '@type': 'Person',
+      name: author
+    },
+    copyrightHolder: {
+      '@type': 'Person',
+      name: author
+    },
+    copyrightYear: '2019',
+    creator: {
+      '@type': 'Person',
+      name: author
+    },
+    publisher: {
+      '@type': 'Person',
+      name: author
+    },
+    datePublished: datePublished,
+    dateModified: dateModified,
+    image: {
+      '@type': 'ImageObject',
+      url: "".concat(image)
+    }
+  }; // Initial breadcrumb list
+
+  var itemListElement = [{
+    '@type': 'ListItem',
+    item: {
+      '@id': pathname,
+      name: 'Homepage'
+    },
+    position: 1
+  }];
+  var schemaArticle = null;
+
+  if (article) {
+    schemaArticle = {
+      '@context': 'http://schema.org',
+      '@type': 'Article',
+      author: {
+        '@type': 'Person',
+        name: author
+      },
+      copyrightHolder: {
+        '@type': 'Person',
+        name: author
+      },
+      copyrightYear: '2019',
+      creator: {
+        '@type': 'Person',
+        name: author
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: author,
+        logo: {
+          '@type': 'ImageObject',
+          url: "".concat(image)
+        }
+      },
+      datePublished: datePublished,
+      dateModified: dateModified,
+      description: description,
+      headline: title,
+      inLanguage: siteLanguage,
+      url: url,
+      name: title,
+      image: {
+        '@type': 'ImageObject',
+        url: image
+      },
+      mainEntityOfPage: url
+    }; // Push current blogpost into breadcrumb list
+
+    itemListElement.push({
+      '@type': 'ListItem',
+      item: {
+        '@id': url,
+        name: title
+      },
+      position: 2
+    });
+  }
+
+  var breadcrumb = {
+    '@context': 'http://schema.org',
+    '@type': 'BreadcrumbList',
+    description: 'Breadcrumbs list',
+    name: 'Breadcrumbs',
+    itemListElement: itemListElement
+  };
   return React.createElement(React.Fragment, null, React.createElement(Helmet, {
     title: title
   }, React.createElement("html", {
@@ -109,7 +215,13 @@ var SEO = function SEO(_ref) {
   }), React.createElement("meta", {
     name: "description",
     content: description
-  })), React.createElement(Facebook, {
+  }), !article && React.createElement("script", {
+    type: "application/ld+json"
+  }, JSON.stringify(schemaOrgWebPage)), article && React.createElement("script", {
+    type: "application/ld+json"
+  }, JSON.stringify(schemaArticle)), React.createElement("script", {
+    type: "application/ld+json"
+  }, JSON.stringify(breadcrumb))), React.createElement(Facebook, {
     desc: description,
     image: image,
     title: title,
