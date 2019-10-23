@@ -41,5 +41,11 @@ export const SEO = ({
 
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  description: PropTypes.string.isRequired,
+  pathname: PropTypes.string.isRequired,
+  article: PropTypes.string,
+  image: PropTypes.string,
+  siteLanguage: PropTypes.string,
+  siteLocale: PropTypes.string,
+  twitterUsername: PropTypes.string,
 }
