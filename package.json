@@ -1,10 +1,11 @@
 {
   "name": "react-seo-component",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "A react SEO component",
   "main": "index.js",
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "release": "npm version patch && npm publish && git push --tags"
   },
   "dependencies": {
     "prop-types": "15.7.2",
@@ -17,7 +18,7 @@
     "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
     "@babel/preset-react": "7.6.3",
-    "rollup": "1.25.1",
+    "rollup": "1.25.2",
     "rollup-plugin-babel": "4.3.3"
   },
   "repository": {

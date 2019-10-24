@@ -1,4 +1,48 @@
-# react-seo-component
+# A `react-seo-component`
+
+Use it for adding canonical links, metadata and OpenGraph information
+to your react projects!
+
+## Use it!
+
+Install it from npm!
+
+```bash
+yarn add react-seo-component
+```
+
+**Examples:**
+
+For an index page:
+
+```jsx
+<SEO
+  title={title}
+  description={description || 'nothin’'}
+  image={image}
+  pathname={siteUrl}
+  siteLanguage={siteLanguage}
+  siteLocale={siteLocale}
+  twitterUsername={twitterUsername}
+/>
+```
+
+For a blog post:
+
+```jsx
+<SEO
+  title={title}
+  description={description}
+  image={image}
+  pathname={siteUrlPlusSlug}
+  siteLanguage={siteLanguage}
+  siteLocale={siteLocale}
+  twitterUsername={twitterUsername}
+  article={true}
+  publishedDate={createdDate}
+  modifiedDate={updatedDate}
+/>
+```
 
 ## Dependencies
 
@@ -34,3 +78,7 @@ Prismic starter.
 https://medium.com/recraftrelic/building-a-react-component-as-a-npm-module-18308d4ccde9
 
 https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
+
+```
+
+```

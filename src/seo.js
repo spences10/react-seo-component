@@ -100,19 +100,19 @@ export const SEO = ({
       description,
       headline: title,
       inLanguage: siteLanguage,
-      url,
+      url: pathname,
       name: title,
       image: {
         '@type': 'ImageObject',
         url: image,
       },
-      mainEntityOfPage: url,
+      mainEntityOfPage: pathname,
     }
     // Push current blogpost into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
-        '@id': url,
+        '@id': pathname,
         name: title,
       },
       position: 2,
