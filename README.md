@@ -1,4 +1,15 @@
-# react-seo-component
+# A `react-seo-component`
+
+Use it for adding canonical links, metadata and OpenGraph information
+to your react projects!
+
+## Use it!
+
+Install it from npm!
+
+```bash
+yarn add react-seo-component
+```
 
 ## Dependencies
 
