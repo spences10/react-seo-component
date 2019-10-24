@@ -11,6 +11,39 @@ Install it from npm!
 yarn add react-seo-component
 ```
 
+**Examples:**
+
+For an index page:
+
+```jsx
+<SEO
+  title={title}
+  description={description || 'nothin’'}
+  image={image}
+  pathname={siteUrl}
+  siteLanguage={siteLanguage}
+  siteLocale={siteLocale}
+  twitterUsername={twitterUsername}
+/>
+```
+
+For a blog post:
+
+```jsx
+<SEO
+  title={title}
+  description={description}
+  image={image}
+  pathname={siteUrlPlusSlug}
+  siteLanguage={siteLanguage}
+  siteLocale={siteLocale}
+  twitterUsername={twitterUsername}
+  article={true}
+  publishedDate={createdDate}
+  modifiedDate={updatedDate}
+/>
+```
+
 ## Dependencies
 
 Presumes you already have the following installed:
@@ -45,3 +78,7 @@ Prismic starter.
 https://medium.com/recraftrelic/building-a-react-component-as-a-npm-module-18308d4ccde9
 
 https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
+
+```
+
+```
