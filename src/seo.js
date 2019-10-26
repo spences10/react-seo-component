@@ -17,6 +17,16 @@ export const SEO = ({
   datePublished,
   dateModified,
 }) => {
+  const seo = {
+    title: title.slice(0, 70),
+    description: description.slice(0, 160),
+    datePublished: datePublished
+      ? null
+      : new Date(Date.now()).toISOString(),
+    dateModified: dateModified
+      ? null
+      : new Date(Date.now()).toISOString(),
+  }
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
@@ -25,11 +35,11 @@ export const SEO = ({
     '@context': 'http://schema.org',
     '@type': 'WebPage',
     url: pathname,
-    headline: description,
+    headline: seo.description,
     inLanguage: siteLanguage,
     mainEntityOfPage: pathname,
-    description: description,
-    name: title,
+    description: seo.description,
+    name: seo.title,
     author: {
       '@type': 'Person',
       name: author,
@@ -47,8 +57,8 @@ export const SEO = ({
       '@type': 'Person',
       name: author,
     },
-    datePublished,
-    dateModified,
+    datePublished: seo.datePublished,
+    dateModified: seo.dateModified,
     image: {
       '@type': 'ImageObject',
       url: `${image}`,
@@ -95,13 +105,13 @@ export const SEO = ({
           url: `${image}`,
         },
       },
-      datePublished,
-      dateModified,
-      description,
-      headline: title,
+      datePublished: seo.datePublished,
+      dateModified: seo.dateModified,
+      description: seo.description,
+      headline: seo.title,
       inLanguage: siteLanguage,
       url: pathname,
-      name: title,
+      name: seo.title,
       image: {
         '@type': 'ImageObject',
         url: image,
@@ -113,7 +123,7 @@ export const SEO = ({
       '@type': 'ListItem',
       item: {
         '@id': pathname,
-        name: title,
+        name: seo.title,
       },
       position: 2,
     })
@@ -129,10 +139,10 @@ export const SEO = ({
 
   return (
     <>
-      <Helmet title={title}>
+      <Helmet title={seo.title}>
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
-        <meta name="description" content={description} />
+        <meta name="description" content={seo.description} />
         {!article && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
@@ -147,20 +157,24 @@ export const SEO = ({
           {JSON.stringify(breadcrumb)}
         </script>
       </Helmet>
-      <Facebook
-        desc={description}
-        image={image}
-        title={title}
-        type={article ? 'article' : 'website'}
-        url={pathname}
-        locale={siteLocale ? siteLocale : 'en_gb'}
-      />
-      <Twitter
-        title={title}
-        image={image}
-        desc={description}
-        username={twitterUsername}
-      />
+      {typeof image === 'undefined' ? null : (
+        <>
+          <Facebook
+            desc={seo.description}
+            image={image}
+            title={seo.title}
+            type={article ? 'article' : 'website'}
+            url={pathname}
+            locale={siteLocale ? siteLocale : 'en_gb'}
+          />
+          <Twitter
+            title={seo.title}
+            image={image}
+            desc={seo.description}
+            username={twitterUsername}
+          />
+        </>
+      )}
     </>
   )
 }
