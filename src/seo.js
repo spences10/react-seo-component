@@ -18,10 +18,14 @@ export const SEO = ({
   dateModified,
 }) => {
   const seo = {
-    datePub: datePublished
+    title: title.slice(0, 70),
+    description: description.slice(0, 160),
+    datePublished: datePublished
       ? null
       : new Date(Date.now()).toISOString(),
-    dateMod: dateModified ? null : new Date(Date.now()).toISOString(),
+    dateModified: dateModified
+      ? null
+      : new Date(Date.now()).toISOString(),
   }
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
@@ -35,7 +39,7 @@ export const SEO = ({
     inLanguage: siteLanguage,
     mainEntityOfPage: pathname,
     description: description,
-    name: title,
+    name: seo.title,
     author: {
       '@type': 'Person',
       name: author,
@@ -104,10 +108,10 @@ export const SEO = ({
       datePublished: seo.datePublished,
       dateModified: seo.dateModified,
       description,
-      headline: title,
+      headline: seo.title,
       inLanguage: siteLanguage,
       url: pathname,
-      name: title,
+      name: seo.title,
       image: {
         '@type': 'ImageObject',
         url: image,
@@ -119,7 +123,7 @@ export const SEO = ({
       '@type': 'ListItem',
       item: {
         '@id': pathname,
-        name: title,
+        name: seo.title,
       },
       position: 2,
     })
@@ -135,7 +139,7 @@ export const SEO = ({
 
   return (
     <>
-      <Helmet title={title}>
+      <Helmet title={seo.title}>
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={description} />
@@ -156,17 +160,18 @@ export const SEO = ({
       <Facebook
         desc={description}
         image={image}
-        title={title}
+        title={seo.title}
         type={article ? 'article' : 'website'}
         url={pathname}
         locale={siteLocale ? siteLocale : 'en_gb'}
       />
       <Twitter
-        title={title}
+        title={seo.title}
         image={image}
         desc={description}
         username={twitterUsername}
       />
+      )}
     </>
   )
 }
