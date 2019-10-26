@@ -157,20 +157,23 @@ export const SEO = ({
           {JSON.stringify(breadcrumb)}
         </script>
       </Helmet>
-      <Facebook
-        desc={description}
-        image={image}
-        title={seo.title}
-        type={article ? 'article' : 'website'}
-        url={pathname}
-        locale={siteLocale ? siteLocale : 'en_gb'}
-      />
-      <Twitter
-        title={seo.title}
-        image={image}
-        desc={description}
-        username={twitterUsername}
-      />
+      {typeof image === 'undefined' ? null : (
+        <>
+          <Facebook
+            desc={description}
+            image={image}
+            title={seo.title}
+            type={article ? 'article' : 'website'}
+            url={pathname}
+            locale={siteLocale ? siteLocale : 'en_gb'}
+          />
+          <Twitter
+            title={seo.title}
+            image={image}
+            desc={description}
+            username={twitterUsername}
+          />
+        </>
       )}
     </>
   )
