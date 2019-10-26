@@ -17,6 +17,12 @@ export const SEO = ({
   datePublished,
   dateModified,
 }) => {
+  const seo = {
+    datePub: datePublished
+      ? null
+      : new Date(Date.now()).toISOString(),
+    dateMod: dateModified ? null : new Date(Date.now()).toISOString(),
+  }
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
@@ -47,8 +53,8 @@ export const SEO = ({
       '@type': 'Person',
       name: author,
     },
-    datePublished,
-    dateModified,
+    datePublished: seo.datePublished,
+    dateModified: seo.dateModified,
     image: {
       '@type': 'ImageObject',
       url: `${image}`,
@@ -95,8 +101,8 @@ export const SEO = ({
           url: `${image}`,
         },
       },
-      datePublished,
-      dateModified,
+      datePublished: seo.datePublished,
+      dateModified: seo.dateModified,
       description,
       headline: title,
       inLanguage: siteLanguage,
