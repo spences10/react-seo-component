@@ -35,10 +35,10 @@ export const SEO = ({
     '@context': 'http://schema.org',
     '@type': 'WebPage',
     url: pathname,
-    headline: description,
+    headline: seo.description,
     inLanguage: siteLanguage,
     mainEntityOfPage: pathname,
-    description: description,
+    description: seo.description,
     name: seo.title,
     author: {
       '@type': 'Person',
@@ -107,7 +107,7 @@ export const SEO = ({
       },
       datePublished: seo.datePublished,
       dateModified: seo.dateModified,
-      description,
+      description: seo.description,
       headline: seo.title,
       inLanguage: siteLanguage,
       url: pathname,
@@ -142,7 +142,7 @@ export const SEO = ({
       <Helmet title={seo.title}>
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
-        <meta name="description" content={description} />
+        <meta name="description" content={seo.description} />
         {!article && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
@@ -160,7 +160,7 @@ export const SEO = ({
       {typeof image === 'undefined' ? null : (
         <>
           <Facebook
-            desc={description}
+            desc={seo.description}
             image={image}
             title={seo.title}
             type={article ? 'article' : 'website'}
@@ -170,7 +170,7 @@ export const SEO = ({
           <Twitter
             title={seo.title}
             image={image}
-            desc={description}
+            desc={seo.description}
             username={twitterUsername}
           />
         </>
