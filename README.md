@@ -54,19 +54,19 @@ Presumes you already have the following installed:
 
 ## Props
 
-| Prop            | Use                     |
-| --------------- | ----------------------- |
-| title           | Site title              |
-| description     | Page description        |
-| pathname        | Page URL                |
-| article         | article                 |
-| image           | image                   |
-| siteLanguage    | defaults to 'en'        |
-| siteLocale      | defaults to 'en_gb'     |
-| twitterUsername | can be empty            |
-| author          | can be empty            |
-| datePublished   | default to current date |
-| dateModified    | default to current date |
+| Prop            | Use                | Default      |
+| --------------- | ------------------ | ------------ |
+| title           | Site title         | ''           |
+| description     | Page description   | ''           |
+| pathname        | Page URL           | ''           |
+| article         | article or website | `website`    |
+| image           | image              | ''           |
+| siteLanguage    |                    | `en`         |
+| siteLocale      |                    | `en_gb`      |
+| twitterUsername | can be empty       | ''           |
+| author          | can be empty       | ''           |
+| datePublished   | ISO date string    | `Date.now()` |
+| dateModified    | ISO date string    | `Date.now()` |
 
 ## Thanks
 
