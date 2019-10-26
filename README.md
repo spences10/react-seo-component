@@ -70,8 +70,8 @@ Presumes you already have the following installed:
 
 ## Thanks
 
-Thanks to @LekoArts for the initial components detailed in his Gatsby
-Prismic starter.
+Thanks to [@LekoArts] for the initial components detailed in his
+Gatsby [Prismic starter].
 
 ## Resources
 
@@ -79,6 +79,7 @@ https://medium.com/recraftrelic/building-a-react-component-as-a-npm-module-18308
 
 https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
 
-```
+<!-- Links -->
 
-```
+[@lekoarts]: https://github.com/LekoArts
+[prismic starter]: https://github.com/LekoArts/gatsby-starter-prismic
