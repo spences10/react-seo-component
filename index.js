@@ -102,18 +102,24 @@ var SEO = function SEO(_ref) {
       author = _ref.author,
       datePublished = _ref.datePublished,
       dateModified = _ref.dateModified;
-  // schema.org in JSONLD format
+  var seo = {
+    title: title.slice(0, 70),
+    description: description.slice(0, 160),
+    datePublished: datePublished ? null : new Date(Date.now()).toISOString(),
+    dateModified: dateModified ? null : new Date(Date.now()).toISOString()
+  }; // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+
   var schemaOrgWebPage = {
     '@context': 'http://schema.org',
     '@type': 'WebPage',
     url: pathname,
-    headline: description,
+    headline: seo.description,
     inLanguage: siteLanguage,
     mainEntityOfPage: pathname,
-    description: description,
-    name: title,
+    description: seo.description,
+    name: seo.title,
     author: {
       '@type': 'Person',
       name: author
@@ -131,8 +137,8 @@ var SEO = function SEO(_ref) {
       '@type': 'Person',
       name: author
     },
-    datePublished: datePublished,
-    dateModified: dateModified,
+    datePublished: seo.datePublished,
+    dateModified: seo.dateModified,
     image: {
       '@type': 'ImageObject',
       url: "".concat(image)
@@ -174,13 +180,13 @@ var SEO = function SEO(_ref) {
           url: "".concat(image)
         }
       },
-      datePublished: datePublished,
-      dateModified: dateModified,
-      description: description,
-      headline: title,
+      datePublished: seo.datePublished,
+      dateModified: seo.dateModified,
+      description: seo.description,
+      headline: seo.title,
       inLanguage: siteLanguage,
       url: pathname,
-      name: title,
+      name: seo.title,
       image: {
         '@type': 'ImageObject',
         url: image
@@ -192,7 +198,7 @@ var SEO = function SEO(_ref) {
       '@type': 'ListItem',
       item: {
         '@id': pathname,
-        name: title
+        name: seo.title
       },
       position: 2
     });
@@ -206,7 +212,7 @@ var SEO = function SEO(_ref) {
     itemListElement: itemListElement
   };
   return React.createElement(React.Fragment, null, React.createElement(Helmet, {
-    title: title
+    title: seo.title
   }, React.createElement("html", {
     lang: siteLanguage ? siteLanguage : 'en'
   }), React.createElement("link", {
@@ -214,26 +220,26 @@ var SEO = function SEO(_ref) {
     href: pathname
   }), React.createElement("meta", {
     name: "description",
-    content: description
+    content: seo.description
   }), !article && React.createElement("script", {
     type: "application/ld+json"
   }, JSON.stringify(schemaOrgWebPage)), article && React.createElement("script", {
     type: "application/ld+json"
   }, JSON.stringify(schemaArticle)), React.createElement("script", {
     type: "application/ld+json"
-  }, JSON.stringify(breadcrumb))), React.createElement(Facebook, {
-    desc: description,
+  }, JSON.stringify(breadcrumb))), typeof image === 'undefined' ? null : React.createElement(React.Fragment, null, React.createElement(Facebook, {
+    desc: seo.description,
     image: image,
-    title: title,
+    title: seo.title,
     type: article ? 'article' : 'website',
     url: pathname,
     locale: siteLocale ? siteLocale : 'en_gb'
   }), React.createElement(Twitter, {
-    title: title,
+    title: seo.title,
     image: image,
-    desc: description,
+    desc: seo.description,
     username: twitterUsername
-  }));
+  })));
 };
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
