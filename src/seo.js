@@ -30,6 +30,8 @@ export const SEO = ({
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+  // Structured Data Testing Tool >>
+  // https://search.google.com/structured-data/testing-tool
 
   const schemaOrgWebPage = {
     '@context': 'http://schema.org',
@@ -157,24 +159,20 @@ export const SEO = ({
           {JSON.stringify(breadcrumb)}
         </script>
       </Helmet>
-      {typeof image === 'undefined' ? null : (
-        <>
-          <Facebook
-            desc={seo.description}
-            image={image}
-            title={seo.title}
-            type={article ? 'article' : 'website'}
-            url={pathname}
-            locale={siteLocale ? siteLocale : 'en_gb'}
-          />
-          <Twitter
-            title={seo.title}
-            image={image}
-            desc={seo.description}
-            username={twitterUsername}
-          />
-        </>
-      )}
+      <Facebook
+        desc={seo.description}
+        image={image}
+        title={seo.title}
+        type={article ? 'article' : 'website'}
+        url={pathname}
+        locale={siteLocale ? siteLocale : 'en_gb'}
+      />
+      <Twitter
+        title={seo.title}
+        image={image}
+        desc={seo.description}
+        username={twitterUsername}
+      />
     </>
   )
 }
@@ -188,4 +186,9 @@ SEO.propTypes = {
   siteLanguage: PropTypes.string,
   siteLocale: PropTypes.string,
   twitterUsername: PropTypes.string,
+  author: PropTypes.string.isRequired,
+}
+
+SEO.defaultProps = {
+  author: `J Doe`,
 }
