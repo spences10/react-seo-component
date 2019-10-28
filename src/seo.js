@@ -188,4 +188,9 @@ SEO.propTypes = {
   siteLanguage: PropTypes.string,
   siteLocale: PropTypes.string,
   twitterUsername: PropTypes.string,
+  author: PropTypes.string.isRequired,
+}
+
+SEO.defaultProps = {
+  author: `J Doe`,
 }
