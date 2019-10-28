@@ -1,5 +1,7 @@
 # A `react-seo-component`
 
+[![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component)
+
 Use it for adding canonical links, metadata and OpenGraph information
 to your react projects!
 
