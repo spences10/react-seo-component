@@ -110,6 +110,8 @@ var SEO = function SEO(_ref) {
   }; // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
+  // Structured Data Testing Tool >>
+  // https://search.google.com/structured-data/testing-tool
 
   var schemaOrgWebPage = {
     '@context': 'http://schema.org',
@@ -227,7 +229,7 @@ var SEO = function SEO(_ref) {
     type: "application/ld+json"
   }, JSON.stringify(schemaArticle)), React.createElement("script", {
     type: "application/ld+json"
-  }, JSON.stringify(breadcrumb))), typeof image === 'undefined' ? null : React.createElement(React.Fragment, null, React.createElement(Facebook, {
+  }, JSON.stringify(breadcrumb))), React.createElement(Facebook, {
     desc: seo.description,
     image: image,
     title: seo.title,
@@ -239,7 +241,7 @@ var SEO = function SEO(_ref) {
     image: image,
     desc: seo.description,
     username: twitterUsername
-  })));
+  }));
 };
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
@@ -249,7 +251,11 @@ SEO.propTypes = {
   image: PropTypes.string,
   siteLanguage: PropTypes.string,
   siteLocale: PropTypes.string,
-  twitterUsername: PropTypes.string
+  twitterUsername: PropTypes.string,
+  author: PropTypes.string.isRequired
+};
+SEO.defaultProps = {
+  author: "J Doe"
 };
 
 exports.Facebook = Facebook;
