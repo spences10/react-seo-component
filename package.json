@@ -1,11 +1,18 @@
 {
   "name": "react-seo-component",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "A react SEO component",
   "main": "index.js",
   "scripts": {
     "build": "rollup -c",
-    "release": "npm version patch && npm publish && git push --tags"
+    "prepare": "yarn build",
+    "postpublish": "git push --tags"
+  },
+  "peerDependencies": {
+    "prop-types": ">=15.7.2",
+    "react": ">=16.8.6",
+    "react-dom": ">=16.8.6",
+    "react-helmet": ">=5.2.1"
   },
   "dependencies": {
     "prop-types": "15.7.2",
