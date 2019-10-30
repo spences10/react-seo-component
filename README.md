@@ -40,6 +40,7 @@ For a blog post:
   siteLanguage={siteLanguage}
   siteLocale={siteLocale}
   twitterUsername={twitterUsername}
+  author={authorName}
   article={true}
   publishedDate={createdDate}
   modifiedDate={updatedDate}
@@ -56,19 +57,19 @@ Presumes you already have the following installed:
 
 ## Props
 
-| Prop            | Use                | Default      |
-| --------------- | ------------------ | ------------ |
-| title           | Site title         | ''           |
-| description     | Page description   | ''           |
-| pathname        | Page URL           | ''           |
-| article         | article or website | `website`    |
-| image           | image              | ''           |
-| siteLanguage    |                    | `en`         |
-| siteLocale      |                    | `en_gb`      |
-| twitterUsername | can be empty       | ''           |
-| author          | can _not_ empty    | 'J Doe'      |
-| datePublished   | ISO date string    | `Date.now()` |
-| dateModified    | ISO date string    | `Date.now()` |
+| Prop            | Type                   | Default      |
+| --------------- | ---------------------- | ------------ |
+| title           | Site title             | ''           |
+| description     | Page description       | ''           |
+| pathname        | Full Page URL          | ''           |
+| article         | `article` or `website` | `website`    |
+| image           | Full image URL         | ''           |
+| siteLanguage    | Content Language       | `en`         |
+| siteLocale      | Content Locale         | `en_gb`      |
+| twitterUsername | can be empty           | ''           |
+| author          | can _not_ empty        | 'J Doe'      |
+| datePublished   | ISO date string        | `Date.now()` |
+| dateModified    | ISO date string        | `Date.now()` |
 
 ## Thanks
 
