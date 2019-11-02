@@ -25,7 +25,7 @@
     "@babel/core": "7.6.4",
     "@babel/preset-env": "7.6.3",
     "@babel/preset-react": "7.6.3",
-    "rollup": "1.26.2",
+    "rollup": "1.26.3",
     "rollup-plugin-babel": "4.3.3"
   },
   "repository": {
