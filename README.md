@@ -13,6 +13,10 @@ Install it from npm!
 yarn add react-seo-component
 ```
 
+If you are using it with Gatsby you will need to install
+`gatsby-plugin-react-helmet` to have the meta tags generated at build
+time.
+
 **Examples:**
 
 For an index page:
