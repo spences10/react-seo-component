@@ -247,7 +247,7 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   pathname: PropTypes.string.isRequired,
-  article: PropTypes.string,
+  article: PropTypes.bool,
   image: PropTypes.string,
   siteLanguage: PropTypes.string,
   siteLocale: PropTypes.string,
