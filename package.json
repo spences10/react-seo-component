@@ -21,10 +21,10 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.6.4",
-    "@babel/core": "7.6.4",
-    "@babel/preset-env": "7.6.3",
-    "@babel/preset-react": "7.6.3",
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.0",
+    "@babel/preset-env": "7.7.1",
+    "@babel/preset-react": "7.7.0",
     "rollup": "1.26.3",
     "rollup-plugin-babel": "4.3.3"
   },
