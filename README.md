@@ -71,7 +71,7 @@ Presumes you already have the following installed:
 | siteLanguage    | Content Language       | `en`         |
 | siteLocale      | Content Locale         | `en_gb`      |
 | twitterUsername | can be empty           | ''           |
-| author          | can _not_ empty        | 'J Doe'      |
+| author          | can _not_ be empty     | 'J Doe'      |
 | datePublished   | ISO date string        | `Date.now()` |
 | dateModified    | ISO date string        | `Date.now()` |
 
