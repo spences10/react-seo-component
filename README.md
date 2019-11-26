@@ -1,6 +1,6 @@
 # A `react-seo-component`
 
-[![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component)
+[![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component) ![bundlephobia min](https://badgen.net/bundlephobia/min/react-seo-component) ![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/react)
 
 Use it for adding canonical links, metadata and OpenGraph information
 to your react projects!
