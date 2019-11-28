@@ -3,9 +3,6 @@
   "version": "0.1.17",
   "description": "A react SEO component",
   "main": "index.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "scripts": {
     "build": "rollup -c",
     "prepare": "yarn build",
