@@ -1,6 +1,6 @@
 {
   "name": "react-seo-component",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "A react SEO component",
   "main": "index.js",
   "scripts": {
@@ -21,9 +21,9 @@
     "react-helmet": "5.2.1"
   },
   "devDependencies": {
-    "@babel/cli": "7.7.4",
-    "@babel/core": "7.7.4",
-    "@babel/preset-env": "7.7.4",
+    "@babel/cli": "7.7.5",
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.5",
     "@babel/preset-react": "7.7.4",
     "rollup": "1.27.7",
     "rollup-plugin-babel": "4.3.3"
