@@ -1,6 +1,10 @@
 {
   "name": "react-seo-component",
+<<<<<<< HEAD
   "version": "1.0.0",
+=======
+  "version": "0.1.27",
+>>>>>>> aaa66bce414eb4cb2f46e99b53a897a0b88b12b3
   "description": "A react SEO component",
   "main": "index.js",
   "scripts": {
