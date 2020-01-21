@@ -24,6 +24,7 @@ For an index page:
 ```jsx
 <SEO
   title={title}
+  titleTemplate={siteName}
   description={description || 'nothin’'}
   image={image}
   pathname={siteUrl}
@@ -38,6 +39,7 @@ For a blog post:
 ```jsx
 <SEO
   title={title}
+  titleTemplate={siteName}
   description={description}
   image={image}
   pathname={siteUrlPlusSlug}
@@ -61,19 +63,20 @@ Presumes you already have the following installed:
 
 ## Props
 
-| Prop            | Type                   | Default      |
-| --------------- | ---------------------- | ------------ |
-| title           | Site title             | ''           |
-| description     | Page description       | ''           |
-| pathname        | Full Page URL          | ''           |
-| article         | `article` or `website` | `website`    |
-| image           | Full image URL         | ''           |
-| siteLanguage    | Content Language       | `en`         |
-| siteLocale      | Content Locale         | `en_gb`      |
-| twitterUsername | can be empty           | ''           |
-| author          | can _not_ be empty     | 'J Doe'      |
-| datePublished   | ISO date string        | `Date.now()` |
-| dateModified    | ISO date string        | `Date.now()` |
+| Prop            | Type                    | Default      |
+| --------------- | ----------------------- | ------------ |
+| title           | Page title              | ''           |
+| titleTemplate   | Page Title + Site title | ''           |
+| description     | Page description        | ''           |
+| pathname        | Full Page URL           | ''           |
+| article         | `article` or `website`  | `website`    |
+| image           | Full image URL          | ''           |
+| siteLanguage    | Content Language        | `en`         |
+| siteLocale      | Content Locale          | `en_gb`      |
+| twitterUsername | can be empty            | ''           |
+| author          | can _not_ be empty      | 'J Doe'      |
+| datePublished   | ISO date string         | `Date.now()` |
+| dateModified    | ISO date string         | `Date.now()` |
 
 ## Thanks
 

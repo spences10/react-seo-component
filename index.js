@@ -92,6 +92,7 @@ Twitter.defaultProps = {
 
 var SEO = function SEO(_ref) {
   var title = _ref.title,
+      titleTemplate = _ref.titleTemplate,
       description = _ref.description,
       pathname = _ref.pathname,
       article = _ref.article,
@@ -214,7 +215,8 @@ var SEO = function SEO(_ref) {
     itemListElement: itemListElement
   };
   return React.createElement(React.Fragment, null, React.createElement(Helmet, {
-    title: seo.title
+    title: seo.title,
+    titleTemplate: "%s | ".concat(titleTemplate)
   }, React.createElement("html", {
     lang: siteLanguage ? siteLanguage : 'en'
   }), React.createElement("link", {
@@ -245,6 +247,7 @@ var SEO = function SEO(_ref) {
 };
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
+  titleTemplate: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   pathname: PropTypes.string.isRequired,
   article: PropTypes.bool,
