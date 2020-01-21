@@ -6,6 +6,7 @@ import { Twitter } from './twitter'
 
 export const SEO = ({
   title,
+  titleTemplate,
   description,
   pathname,
   article,
@@ -141,7 +142,10 @@ export const SEO = ({
 
   return (
     <>
-      <Helmet title={seo.title}>
+      <Helmet
+        title={seo.title}
+        titleTemplate={`%s | ${titleTemplate}`}
+      >
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={seo.description} />
@@ -179,6 +183,7 @@ export const SEO = ({
 
 SEO.propTypes = {
   title: PropTypes.string.isRequired,
+  titleTemplate: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   pathname: PropTypes.string.isRequired,
   article: PropTypes.bool,
