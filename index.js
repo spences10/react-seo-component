@@ -15,25 +15,25 @@ var Facebook = function Facebook(_ref) {
       desc = _ref.desc,
       image = _ref.image,
       locale = _ref.locale;
-  return React.createElement(Helmet, null, React.createElement("meta", {
+  return /*#__PURE__*/React.createElement(Helmet, null, /*#__PURE__*/React.createElement("meta", {
     property: "og:locale",
     content: locale
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:url",
     content: url
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:type",
     content: type
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:title",
     content: title
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:description",
     content: desc
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:image",
     content: image
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     property: "og:image:alt",
     content: desc
   }));
@@ -58,22 +58,22 @@ var Twitter = function Twitter(_ref) {
       title = _ref.title,
       desc = _ref.desc,
       image = _ref.image;
-  return React.createElement(Helmet, null, username && React.createElement("meta", {
+  return /*#__PURE__*/React.createElement(Helmet, null, username && /*#__PURE__*/React.createElement("meta", {
     name: "twitter:creator",
     content: username
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "twitter:card",
     content: type
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "twitter:title",
     content: title
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "twitter:description",
     content: desc
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "twitter:image",
     content: image
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "twitter:image:alt",
     content: desc
   }));
@@ -214,31 +214,31 @@ var SEO = function SEO(_ref) {
     name: 'Breadcrumbs',
     itemListElement: itemListElement
   };
-  return React.createElement(React.Fragment, null, React.createElement(Helmet, {
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Helmet, {
     title: seo.title,
     titleTemplate: "%s | ".concat(titleTemplate)
-  }, React.createElement("html", {
+  }, /*#__PURE__*/React.createElement("html", {
     lang: siteLanguage ? siteLanguage : 'en'
-  }), React.createElement("link", {
+  }), /*#__PURE__*/React.createElement("link", {
     rel: "canonical",
     href: pathname
-  }), React.createElement("meta", {
+  }), /*#__PURE__*/React.createElement("meta", {
     name: "description",
     content: seo.description
-  }), !article && React.createElement("script", {
+  }), !article && /*#__PURE__*/React.createElement("script", {
     type: "application/ld+json"
-  }, JSON.stringify(schemaOrgWebPage)), article && React.createElement("script", {
+  }, JSON.stringify(schemaOrgWebPage)), article && /*#__PURE__*/React.createElement("script", {
     type: "application/ld+json"
-  }, JSON.stringify(schemaArticle)), React.createElement("script", {
+  }, JSON.stringify(schemaArticle)), /*#__PURE__*/React.createElement("script", {
     type: "application/ld+json"
-  }, JSON.stringify(breadcrumb))), React.createElement(Facebook, {
+  }, JSON.stringify(breadcrumb))), /*#__PURE__*/React.createElement(Facebook, {
     desc: seo.description,
     image: image,
     title: seo.title,
     type: article ? 'article' : 'website',
     url: pathname,
     locale: siteLocale ? siteLocale : 'en_gb'
-  }), React.createElement(Twitter, {
+  }), /*#__PURE__*/React.createElement(Twitter, {
     title: seo.title,
     image: image,
     desc: seo.description,
