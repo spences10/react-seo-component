@@ -72,10 +72,14 @@ For a blog post:
 | datePublished   | ISO date string         | `Date.now()` |
 | dateModified    | ISO date string         | `Date.now()` |
 
-## Thanks
+## Thanks:
 
-Thanks to [@LekoArts] for the initial components detailed in his
-Gatsby [Prismic starter].
+- **[LekoArts]** for the initial components detailed in his Gatsby
+  [Prismic starter].
+
+- **[Leigh Halliday]** for the primer video on using [TSDX]
+
+- **[Jared Palmer]** for [TSDX]
 
 ## Resources
 
@@ -85,5 +89,8 @@ https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
 
 <!-- Links -->
 
-[@lekoarts]: https://github.com/LekoArts
+[lekoarts]: https://github.com/LekoArts
 [prismic starter]: https://github.com/LekoArts/gatsby-starter-prismic
+[jared palmer]: https://github.com/jaredpalmer
+[leigh halliday]: https://github.com/leighhalliday
+[tsdx]: https://github.com/jaredpalmer/tsdx
