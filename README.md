@@ -1,9 +1,11 @@
 # A `react-seo-component`
 
-[![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component) ![bundlephobia min](https://badgen.net/bundlephobia/min/react-seo-component) ![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/react)
+[![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component)
+![bundlephobia min](https://badgen.net/bundlephobia/min/react-seo-component)
+![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/react)
 
 Use it for adding canonical links, metadata and OpenGraph information
-to your react projects!
+to your React projects!
 
 ## Use it!
 
@@ -11,11 +13,22 @@ Install it from npm!
 
 ```bash
 yarn add react-seo-component
+# peer dependency of react helmet
+yarn add react-helmet
 ```
 
-If you are using it with Gatsby you will need to install
-`gatsby-plugin-react-helmet` to have the meta tags generated at build
-time.
+If you are using it with Gatsby you will also need to install the
+Gatsby plugin:
+
+```bash
+yarn add react-seo-component
+yarn add react-helmet
+yarn add gatsby-plugin-react-helmet
+# or in one command
+yarn add react-seo-component react-helmet gatsby-plugin-react-helmet
+```
+
+This will create the meta tags at build time.
 
 **Examples:**
 
@@ -53,14 +66,6 @@ For a blog post:
 />
 ```
 
-## Dependencies
-
-Presumes you already have the following installed:
-
-- `prop-types`
-- `react`
-- `react-helmet`
-
 ## Props
 
 | Prop            | Type                    | Default      |
@@ -78,10 +83,28 @@ Presumes you already have the following installed:
 | datePublished   | ISO date string         | `Date.now()` |
 | dateModified    | ISO date string         | `Date.now()` |
 
-## Thanks
+## To test locally
 
-Thanks to [@LekoArts] for the initial components detailed in his
-Gatsby [Prismic starter].
+Use `npm pack` or `yarn pack` to create a `.tgz` of the project you
+can install locally on your project to test with.
+
+```bash
+# from here
+yarn pack
+# copy to project to test
+cp react-seo-component-2.0.1.tgz ../project-to-test-with/
+# ~/project-to-test-with
+yarn add file:react-seo-component-2.0.1.tgz
+```
+
+## Thanks:
+
+- **[LekoArts]** for the initial components detailed in his Gatsby
+  [Prismic starter].
+
+- **[Leigh Halliday]** for the [primer video] on using [TSDX]
+
+- **[Jared Palmer]** for [TSDX]
 
 ## Resources
 
@@ -91,5 +114,9 @@ https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
 
 <!-- Links -->
 
-[@lekoarts]: https://github.com/LekoArts
+[lekoarts]: https://github.com/LekoArts
 [prismic starter]: https://github.com/LekoArts/gatsby-starter-prismic
+[jared palmer]: https://github.com/jaredpalmer
+[leigh halliday]: https://github.com/leighhalliday
+[tsdx]: https://github.com/jaredpalmer/tsdx
+[primer video]: https://www.youtube.com/watch?v=V3XZYC8zmvo

@@ -1,37 +1,53 @@
 {
-  "name": "react-seo-component",
-<<<<<<< HEAD
-  "version": "1.0.0",
-=======
-  "version": "0.1.27",
->>>>>>> aaa66bce414eb4cb2f46e99b53a897a0b88b12b3
-  "description": "A react SEO component",
-  "main": "index.js",
+  "version": "2.0.0",
+  "license": "MIT",
+  "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
   "scripts": {
-    "build": "rollup -c",
-    "prepare": "yarn build",
-    "postpublish": "git push --tags"
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build"
   },
   "peerDependencies": {
-    "prop-types": ">=15.7.2",
-    "react": ">=16.8.6",
-    "react-dom": ">=16.8.6",
-    "react-helmet": ">=5.2.1"
-  },
-  "dependencies": {
-    "prop-types": "15.7.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
-    "react-helmet": "5.2.1"
+    "react": ">=16",
+    "react-helmet": "6.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "7.8.3",
-    "@babel/core": "7.8.3",
-    "@babel/preset-env": "7.8.3",
-    "@babel/preset-react": "7.8.3",
-    "rollup": "1.29.1",
-    "rollup-plugin-babel": "4.3.3"
+    "@types/jest": "25.2.1",
+    "@types/react": "16.9.34",
+    "@types/react-dom": "16.9.6",
+    "@types/react-helmet": "5.0.15",
+    "husky": "4.2.5",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "tsdx": "0.13.1",
+    "tslib": "1.11.1",
+    "typescript": "3.8.3"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 70,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "proseWrap": "always"
+  },
+  "name": "react-seo-component",
+  "module": "dist/react-seo-component.esm.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spences10/react-seo-component.git"
@@ -46,8 +62,6 @@
     "twitter",
     "jsonld"
   ],
-  "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/spences10/react-seo-component/issues"
   },
