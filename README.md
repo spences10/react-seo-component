@@ -5,7 +5,7 @@
 ![bundlephobia minzip](https://badgen.net/bundlephobia/minzip/react)
 
 Use it for adding canonical links, metadata and OpenGraph information
-to your react projects!
+to your React projects!
 
 ## Use it!
 
@@ -85,6 +85,9 @@ For a blog post:
 
 ## To test locally
 
+Use `npm pack` or `yarn pack` to create a `.tgz` of the project you
+can install locally on your project to test with.
+
 ```bash
 # from here
 yarn pack
@@ -99,7 +102,7 @@ yarn add file:react-seo-component-2.0.1.tgz
 - **[LekoArts]** for the initial components detailed in his Gatsby
   [Prismic starter].
 
-- **[Leigh Halliday]** for the primer video on using [TSDX]
+- **[Leigh Halliday]** for the [primer video] on using [TSDX]
 
 - **[Jared Palmer]** for [TSDX]
 
@@ -116,3 +119,4 @@ https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
 [jared palmer]: https://github.com/jaredpalmer
 [leigh halliday]: https://github.com/leighhalliday
 [tsdx]: https://github.com/jaredpalmer/tsdx
+[primer video]: https://www.youtube.com/watch?v=V3XZYC8zmvo
