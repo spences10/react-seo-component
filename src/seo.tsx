@@ -8,14 +8,14 @@ interface Props {
   titleTemplate: string
   description: string
   pathname: string
-  article: boolean
+  article?: boolean
   image: string
   siteLanguage: string
   siteLocale: string
   twitterUsername: string
-  author: string
-  datePublished: string
-  dateModified: string
+  author?: string
+  datePublished?: string
+  dateModified?: string
 }
 
 export const SEO = ({
@@ -23,7 +23,7 @@ export const SEO = ({
   titleTemplate,
   description,
   pathname,
-  article,
+  article = false,
   image,
   siteLanguage,
   siteLocale,
