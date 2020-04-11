@@ -1,23 +1,37 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-import Helmet from 'react-helmet'
+import { Helmet } from 'react-helmet'
 import { Facebook } from './facebook'
 import { Twitter } from './twitter'
+
+interface Props {
+  title: string
+  titleTemplate: string
+  description: string
+  pathname: string
+  article?: boolean
+  image: string
+  siteLanguage: string
+  siteLocale: string
+  twitterUsername: string
+  author?: string
+  datePublished?: string
+  dateModified?: string
+}
 
 export const SEO = ({
   title,
   titleTemplate,
   description,
   pathname,
-  article,
+  article = false,
   image,
   siteLanguage,
   siteLocale,
   twitterUsername,
-  author,
+  author = 'J Doe.',
   datePublished,
   dateModified,
-}) => {
+}: Props) => {
   const seo = {
     title: title.slice(0, 70),
     description: description.slice(0, 160),
@@ -179,21 +193,4 @@ export const SEO = ({
       />
     </>
   )
-}
-
-SEO.propTypes = {
-  title: PropTypes.string.isRequired,
-  titleTemplate: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  pathname: PropTypes.string.isRequired,
-  article: PropTypes.bool,
-  image: PropTypes.string,
-  siteLanguage: PropTypes.string,
-  siteLocale: PropTypes.string,
-  twitterUsername: PropTypes.string,
-  author: PropTypes.string.isRequired,
-}
-
-SEO.defaultProps = {
-  author: `J Doe`,
 }
