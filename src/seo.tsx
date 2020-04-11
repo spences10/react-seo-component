@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet, HelmetProvider } from 'react-helmet-async'
+import { Helmet } from 'react-helmet'
 import { Facebook } from './facebook'
 import { Twitter } from './twitter'
 
@@ -155,7 +155,7 @@ export const SEO = ({
   }
 
   return (
-    <HelmetProvider>
+    <>
       <Helmet
         title={seo.title}
         titleTemplate={`%s | ${titleTemplate}`}
@@ -191,6 +191,6 @@ export const SEO = ({
         desc={seo.description}
         username={twitterUsername}
       />
-    </HelmetProvider>
+    </>
   )
 }
