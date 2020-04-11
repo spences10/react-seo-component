@@ -1,5 +1,5 @@
-import React from "react"
-import { Helmet } from "react-helmet-async"
+import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 interface Props {
   type?: string // optional denoted with ?
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const Twitter = ({
-  type = "summary_large_image",
+  type = 'summary_large_image',
   username,
   title,
   desc,
