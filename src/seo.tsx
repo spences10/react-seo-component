@@ -1,8 +1,22 @@
-import PropTypes from 'prop-types'
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Facebook } from './facebook'
-import { Twitter } from './twitter'
+import React from "react"
+import { Helmet } from "react-helmet-async"
+import { Facebook } from "./facebook"
+import { Twitter } from "./twitter"
+
+interface Props {
+  title: string
+  titleTemplate: string
+  description: string
+  pathname: string
+  article: boolean
+  image: string
+  siteLanguage: string
+  siteLocale: string
+  twitterUsername: string
+  author: string
+  datePublished: string
+  dateModified: string
+}
 
 export const SEO = ({
   title,
@@ -14,10 +28,10 @@ export const SEO = ({
   siteLanguage,
   siteLocale,
   twitterUsername,
-  author,
+  author = "J Doe.",
   datePublished,
   dateModified,
-}) => {
+}: Props) => {
   const seo = {
     title: title.slice(0, 70),
     description: description.slice(0, 160),
@@ -35,8 +49,8 @@ export const SEO = ({
   // https://search.google.com/structured-data/testing-tool
 
   const schemaOrgWebPage = {
-    '@context': 'http://schema.org',
-    '@type': 'WebPage',
+    "@context": "http://schema.org",
+    "@type": "WebPage",
     url: pathname,
     headline: seo.description,
     inLanguage: siteLanguage,
@@ -44,26 +58,26 @@ export const SEO = ({
     description: seo.description,
     name: seo.title,
     author: {
-      '@type': 'Person',
+      "@type": "Person",
       name: author,
     },
     copyrightHolder: {
-      '@type': 'Person',
+      "@type": "Person",
       name: author,
     },
-    copyrightYear: '2019',
+    copyrightYear: "2019",
     creator: {
-      '@type': 'Person',
+      "@type": "Person",
       name: author,
     },
     publisher: {
-      '@type': 'Person',
+      "@type": "Person",
       name: author,
     },
     datePublished: seo.datePublished,
     dateModified: seo.dateModified,
     image: {
-      '@type': 'ImageObject',
+      "@type": "ImageObject",
       url: `${image}`,
     },
   }
@@ -72,10 +86,10 @@ export const SEO = ({
 
   const itemListElement = [
     {
-      '@type': 'ListItem',
+      "@type": "ListItem",
       item: {
-        '@id': pathname,
-        name: 'Homepage',
+        "@id": pathname,
+        name: "Homepage",
       },
       position: 1,
     },
@@ -85,26 +99,26 @@ export const SEO = ({
 
   if (article) {
     schemaArticle = {
-      '@context': 'http://schema.org',
-      '@type': 'Article',
+      "@context": "http://schema.org",
+      "@type": "Article",
       author: {
-        '@type': 'Person',
+        "@type": "Person",
         name: author,
       },
       copyrightHolder: {
-        '@type': 'Person',
+        "@type": "Person",
         name: author,
       },
-      copyrightYear: '2019',
+      copyrightYear: "2019",
       creator: {
-        '@type': 'Person',
+        "@type": "Person",
         name: author,
       },
       publisher: {
-        '@type': 'Organization',
+        "@type": "Organization",
         name: author,
         logo: {
-          '@type': 'ImageObject',
+          "@type": "ImageObject",
           url: `${image}`,
         },
       },
@@ -116,16 +130,16 @@ export const SEO = ({
       url: pathname,
       name: seo.title,
       image: {
-        '@type': 'ImageObject',
+        "@type": "ImageObject",
         url: image,
       },
       mainEntityOfPage: pathname,
     }
     // Push current blogpost into breadcrumb list
     itemListElement.push({
-      '@type': 'ListItem',
+      "@type": "ListItem",
       item: {
-        '@id': pathname,
+        "@id": pathname,
         name: seo.title,
       },
       position: 2,
@@ -133,10 +147,10 @@ export const SEO = ({
   }
 
   const breadcrumb = {
-    '@context': 'http://schema.org',
-    '@type': 'BreadcrumbList',
-    description: 'Breadcrumbs list',
-    name: 'Breadcrumbs',
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    description: "Breadcrumbs list",
+    name: "Breadcrumbs",
     itemListElement,
   }
 
@@ -146,7 +160,7 @@ export const SEO = ({
         title={seo.title}
         titleTemplate={`%s | ${titleTemplate}`}
       >
-        <html lang={siteLanguage ? siteLanguage : 'en'} />
+        <html lang={siteLanguage ? siteLanguage : "en"} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={seo.description} />
         {!article && (
@@ -167,9 +181,9 @@ export const SEO = ({
         desc={seo.description}
         image={image}
         title={seo.title}
-        type={article ? 'article' : 'website'}
+        type={article ? "article" : "website"}
         url={pathname}
-        locale={siteLocale ? siteLocale : 'en_gb'}
+        locale={siteLocale ? siteLocale : "en_gb"}
       />
       <Twitter
         title={seo.title}
@@ -179,21 +193,4 @@ export const SEO = ({
       />
     </>
   )
-}
-
-SEO.propTypes = {
-  title: PropTypes.string.isRequired,
-  titleTemplate: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  pathname: PropTypes.string.isRequired,
-  article: PropTypes.bool,
-  image: PropTypes.string,
-  siteLanguage: PropTypes.string,
-  siteLocale: PropTypes.string,
-  twitterUsername: PropTypes.string,
-  author: PropTypes.string.isRequired,
-}
-
-SEO.defaultProps = {
-  author: `J Doe`,
 }
