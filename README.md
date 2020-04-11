@@ -13,11 +13,22 @@ Install it from npm!
 
 ```bash
 yarn add react-seo-component
+# peer dependency of react helmet
+yarn add react-helmet
 ```
 
-If you are using it with Gatsby you will need to install
-`gatsby-plugin-react-helmet` to have the meta tags generated at build
-time.
+If you are using it with Gatsby you will also need to install the
+Gatsby plugin:
+
+```bash
+yarn add react-seo-component
+yarn add react-helmet
+yarn add gatsby-plugin-react-helmet
+# or in one command
+yarn add react-seo-component react-helmet gatsby-plugin-react-helmet
+```
+
+This will create the meta tags at build time.
 
 **Examples:**
 
@@ -71,6 +82,17 @@ For a blog post:
 | author          | can _not_ be empty      | 'J Doe'      |
 | datePublished   | ISO date string         | `Date.now()` |
 | dateModified    | ISO date string         | `Date.now()` |
+
+## To test locally
+
+```bash
+# from here
+yarn pack
+# copy to project to test
+cp react-seo-component-2.0.1.tgz ../project-to-test-with/
+# ~/project-to-test-with
+yarn add file:react-seo-component-2.0.1.tgz
+```
 
 ## Thanks:
 
