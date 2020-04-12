@@ -42,6 +42,9 @@ export const SEO = ({
       ? null
       : new Date(Date.now()).toISOString(),
   }
+
+  const copyrightYear = new Date().getFullYear()
+
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
@@ -65,7 +68,7 @@ export const SEO = ({
       '@type': 'Person',
       name: author,
     },
-    copyrightYear: '2019',
+    copyrightYear,
     creator: {
       '@type': 'Person',
       name: author,
@@ -96,7 +99,6 @@ export const SEO = ({
   ]
 
   let schemaArticle = null
-  const copyrightYear = new Date().getFullYear()
 
   if (article) {
     schemaArticle = {
@@ -164,6 +166,11 @@ export const SEO = ({
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={seo.description} />
+
+        <meta itemprop="name" content={seo.title} />
+        <meta itemprop="description" content={seo.description} />
+        <meta itemprop="image" content={image} />
+
         {!article && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
