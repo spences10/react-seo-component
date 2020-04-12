@@ -96,6 +96,7 @@ export const SEO = ({
   ]
 
   let schemaArticle = null
+  const copyrightYear = new Date().getFullYear()
 
   if (article) {
     schemaArticle = {
@@ -109,7 +110,7 @@ export const SEO = ({
         '@type': 'Person',
         name: author,
       },
-      copyrightYear: '2019',
+      copyrightYear,
       creator: {
         '@type': 'Person',
         name: author,
@@ -135,7 +136,7 @@ export const SEO = ({
       },
       mainEntityOfPage: pathname,
     }
-    // Push current blogpost into breadcrumb list
+    // Push current blog post into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
