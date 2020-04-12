@@ -164,6 +164,11 @@ export const SEO = ({
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={seo.description} />
+
+        <meta itemprop="name" content={seo.title} />
+        <meta itemprop="description" content={seo.description} />
+        <meta itemprop="image" content={image} />
+
         {!article && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
