@@ -1,4 +1,4 @@
-# A `react-seo-component`
+# React SEO Component
 
 [![CodeFactor](https://www.codefactor.io/repository/github/spences10/react-seo-component/badge)](https://www.codefactor.io/repository/github/spences10/react-seo-component)
 ![bundlephobia min](https://badgen.net/bundlephobia/min/react-seo-component)
