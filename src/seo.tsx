@@ -9,7 +9,7 @@ interface Props {
   description: string
   pathname: string
   article?: boolean
-  image: string
+  image?: string
   siteLanguage: string
   siteLocale: string
   twitterUsername: string
@@ -42,6 +42,9 @@ export const SEO = ({
       ? null
       : new Date(Date.now()).toISOString(),
   }
+
+  const copyrightYear = new Date().getFullYear()
+
   // schema.org in JSONLD format
   // https://developers.google.com/search/docs/guides/intro-structured-data
   // You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
@@ -65,7 +68,7 @@ export const SEO = ({
       '@type': 'Person',
       name: author,
     },
-    copyrightYear: '2019',
+    copyrightYear,
     creator: {
       '@type': 'Person',
       name: author,
@@ -109,7 +112,7 @@ export const SEO = ({
         '@type': 'Person',
         name: author,
       },
-      copyrightYear: '2019',
+      copyrightYear,
       creator: {
         '@type': 'Person',
         name: author,
@@ -135,7 +138,7 @@ export const SEO = ({
       },
       mainEntityOfPage: pathname,
     }
-    // Push current blogpost into breadcrumb list
+    // Push current blog post into breadcrumb list
     itemListElement.push({
       '@type': 'ListItem',
       item: {
@@ -163,6 +166,7 @@ export const SEO = ({
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
         <meta name="description" content={seo.description} />
+
         {!article && (
           <script type="application/ld+json">
             {JSON.stringify(schemaOrgWebPage)}
@@ -177,20 +181,24 @@ export const SEO = ({
           {JSON.stringify(breadcrumb)}
         </script>
       </Helmet>
-      <Facebook
-        desc={seo.description}
-        image={image}
-        title={seo.title}
-        type={article ? 'article' : 'website'}
-        url={pathname}
-        locale={siteLocale ? siteLocale : 'en_gb'}
-      />
-      <Twitter
-        title={seo.title}
-        image={image}
-        desc={seo.description}
-        username={twitterUsername}
-      />
+      {image && (
+        <>
+          <Facebook
+            desc={seo.description}
+            image={image}
+            title={seo.title}
+            type={article ? 'article' : 'website'}
+            url={pathname}
+            locale={siteLocale ? siteLocale : 'en_gb'}
+          />
+          <Twitter
+            title={seo.title}
+            image={image}
+            desc={seo.description}
+            username={twitterUsername}
+          />
+        </>
+      )}
     </>
   )
 }
