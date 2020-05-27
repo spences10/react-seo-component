@@ -9,7 +9,7 @@ interface Props {
   description: string
   pathname: string
   article?: boolean
-  image: string
+  image?: string
   siteLanguage: string
   siteLocale: string
   twitterUsername: string
@@ -181,20 +181,24 @@ export const SEO = ({
           {JSON.stringify(breadcrumb)}
         </script>
       </Helmet>
-      <Facebook
-        desc={seo.description}
-        image={image}
-        title={seo.title}
-        type={article ? 'article' : 'website'}
-        url={pathname}
-        locale={siteLocale ? siteLocale : 'en_gb'}
-      />
-      <Twitter
-        title={seo.title}
-        image={image}
-        desc={seo.description}
-        username={twitterUsername}
-      />
+      {image && (
+        <>
+          <Facebook
+            desc={seo.description}
+            image={image}
+            title={seo.title}
+            type={article ? 'article' : 'website'}
+            url={pathname}
+            locale={siteLocale ? siteLocale : 'en_gb'}
+          />
+          <Twitter
+            title={seo.title}
+            image={image}
+            desc={seo.description}
+            username={twitterUsername}
+          />
+        </>
+      )}
     </>
   )
 }
