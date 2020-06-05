@@ -6,6 +6,7 @@ import { Twitter } from './twitter'
 interface Props {
   title: string
   titleTemplate: string
+  titleSeparator?: string
   description: string
   pathname: string
   article?: boolean
@@ -21,6 +22,7 @@ interface Props {
 export const SEO = ({
   title,
   titleTemplate,
+  titleSeparator,
   description,
   pathname,
   article = false,
@@ -161,7 +163,9 @@ export const SEO = ({
     <>
       <Helmet
         title={seo.title}
-        titleTemplate={`%s | ${titleTemplate}`}
+        titleTemplate={`%s ${
+          titleSeparator ? titleSeparator : `·`
+        } ${titleTemplate}`}
       >
         <html lang={siteLanguage ? siteLanguage : 'en'} />
         <link rel="canonical" href={pathname} />
