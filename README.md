@@ -38,6 +38,7 @@ For an index page:
 <SEO
   title={title}
   titleTemplate={siteName}
+  titleSeparator={`-`}
   description={description || 'nothin’'}
   image={image}
   pathname={siteUrl}
@@ -53,6 +54,7 @@ For a blog post:
 <SEO
   title={title}
   titleTemplate={siteName}
+  titleSeparator={`-`}
   description={description}
   image={image}
   pathname={siteUrlPlusSlug}
@@ -68,20 +70,21 @@ For a blog post:
 
 ## Props
 
-| Prop            | Type                    | Default      |
-| --------------- | ----------------------- | ------------ |
-| title           | Page title              | ''           |
-| titleTemplate   | Page Title + Site title | ''           |
-| description     | Page description        | ''           |
-| pathname        | Full Page URL           | ''           |
-| article         | `article` or `website`  | `website`    |
-| image           | Full image URL          | ''           |
-| siteLanguage    | Content Language        | `en`         |
-| siteLocale      | Content Locale          | `en_gb`      |
-| twitterUsername | can be empty            | ''           |
-| author          | can _not_ be empty      | 'J Doe'      |
-| datePublished   | ISO date string         | `Date.now()` |
-| dateModified    | ISO date string         | `Date.now()` |
+| Prop            | Type                            | Default      |
+| --------------- | ------------------------------- | ------------ |
+| title           | Page title                      | ''           |
+| titleTemplate   | Page Title + Site title         | ''           |
+| titleSeparator  | Between Page Title + Site title | ·            |
+| description     | Page description                | ''           |
+| pathname        | Full Page URL                   | ''           |
+| article         | `article` or `website`          | `website`    |
+| image           | Full image URL                  | ''           |
+| siteLanguage    | Content Language                | `en`         |
+| siteLocale      | Content Locale                  | `en_gb`      |
+| twitterUsername | can be empty                    | ''           |
+| author          | can _not_ be empty              | 'J Doe'      |
+| datePublished   | ISO date string                 | `Date.now()` |
+| dateModified    | ISO date string                 | `Date.now()` |
 
 ## To test locally
 
