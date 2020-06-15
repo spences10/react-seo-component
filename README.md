@@ -7,6 +7,11 @@
 Use it for adding canonical links, metadata and OpenGraph information
 to your React projects!
 
+If you are rendering client side (not using Gatsby, or Next.js static
+routes) then you can use [react-snap] to create your static HTML.
+
+This is primarily targeted for use in Gatsby sites.
+
 ## Use it!
 
 Install it from npm!
@@ -123,3 +128,4 @@ https://github.com/recraftrelic/dummy-react-npm-module/blob/master/package.json
 [leigh halliday]: https://github.com/leighhalliday
 [tsdx]: https://github.com/jaredpalmer/tsdx
 [primer video]: https://www.youtube.com/watch?v=V3XZYC8zmvo
+[react-snap]: https://github.com/stereobooster/react-snap
