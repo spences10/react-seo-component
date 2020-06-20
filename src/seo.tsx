@@ -19,6 +19,8 @@ interface Props {
   dateModified?: string
 }
 
+const dateNow = new Date(Date.now()).toISOString()
+
 export const SEO = ({
   title,
   titleTemplate,
@@ -31,18 +33,14 @@ export const SEO = ({
   siteLocale,
   twitterUsername,
   author = 'J Doe.',
-  datePublished,
-  dateModified,
+  datePublished = dateNow,
+  dateModified = dateNow,
 }: Props) => {
   const seo = {
     title: title.slice(0, 70),
     description: description.slice(0, 160),
-    datePublished: datePublished
-      ? null
-      : new Date(Date.now()).toISOString(),
-    dateModified: dateModified
-      ? null
-      : new Date(Date.now()).toISOString(),
+    datePublished,
+    dateModified,
   }
 
   const copyrightYear = new Date().getFullYear()
