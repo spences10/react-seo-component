@@ -1,5 +1,5 @@
 {
-  "version": "2.0.6",
+  "version": "2.0.7",
   "license": "MIT",
   "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
     "husky": "4.3.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "tsdx": "0.13.1",
+    "tsdx": "0.14.1",
     "tslib": "1.11.1",
     "typescript": "3.8.3"
   },
