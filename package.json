@@ -1,5 +1,5 @@
 {
-  "version": "2.0.6",
+  "version": "2.0.7",
   "license": "MIT",
   "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
   "main": "dist/index.js",
@@ -23,7 +23,7 @@
     "react-helmet": "6.0.0"
   },
   "devDependencies": {
-    "@types/jest": "25.2.3",
+    "@types/jest": "26.0.24",
     "@types/react": "16.14.11",
     "@types/react-dom": "16.9.14",
     "@types/react-helmet": "5.0.17",
