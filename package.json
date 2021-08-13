@@ -27,7 +27,7 @@
     "@types/react": "17.0.17",
     "@types/react-dom": "17.0.9",
     "@types/react-helmet": "6.1.2",
-    "husky": "4.3.8",
+    "husky": "7.0.1",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "tsdx": "0.14.1",
