@@ -28,8 +28,8 @@
     "@types/react-dom": "17.0.9",
     "@types/react-helmet": "6.1.2",
     "husky": "7.0.1",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "tsdx": "0.14.1",
     "tslib": "1.14.1",
     "typescript": "4.3.5"
