@@ -1,5 +1,5 @@
 {
-  "version": "2.0.14",
+  "version": "2.0.15",
   "license": "MIT",
   "author": "Scott Spence <yo@scottspence.dev> (https://scottspence.dev/)",
   "main": "dist/index.js",
@@ -27,7 +27,7 @@
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.9",
     "@types/react-helmet": "6.1.2",
-    "husky": "7.0.1",
+    "husky": "7.0.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tsdx": "0.14.1",
